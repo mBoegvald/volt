@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Helvetica, sans-serif;
+      }
+
+      nav {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        background-color: black;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        color: white;
+        padding: 8px 0 10px;
+        font-size: 15px;
+      }
+      .centerNav {
+        width: 60%;
+        margin: 0 auto;
+      }
+      .left {
+        display: flex;
+        flex-direction: row;
+      }
+      .logo {
+        padding-right: 10px;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+      li {
+        list-style: none;
+        padding: 10px 15px;
+      }
+      .landing {
+        background: url(pics/roskilde_festival_2018_opening_day.jpg) no-repeat
+          center center;
+        background-size: cover;
+        height: 600px;
+        background-position-y: 100%;
+        position: relative;
+        text-align: center;
+      }
+      .content {
+        position: absolute;
+        width: 45%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
+        top: 50%;
+        left: 50%;
+        background-color: rgba(0, 0, 0, 0.692);
+        padding: 50px;
+        color: white;
+        border-radius: 10px;
+      }
+      .buttonContainer {
+        margin: 20px;
+      }
+
+      .content button {
+        border-radius: 8px;
+        background-color: #a6cc45;
+        padding: 10px 20px;
+        border: 0;
+        color: white;
+        margin: 15px 15px 0;
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+      .content h1 {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+      .content p {
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="centerNav">
+        <div class="left">
+          <div class="logo">
+            <img
+              src="https://getvolt.dk/themes/volt/img/Volt-logo-nopowertogo.png"
+              alt=""
+            />
+          </div>
+          <ul>
+            <li>Festivaler</li>
+            <li>Frivillig</li>
+            <li>Shop</li>
+            <li>Hjælp</li>
+            <li>Blog</li>
+          </ul>
+        </div>
+        <div class="right"></div>
+      </div>
+    </nav>
+    <div class="landing">
+      <div class="content">
+        <h1>Bærbar mobilopladning på Roskilde Festival</h1>
+        <p>
+          Slip for at undvære mobilen, vente på opladning og stå i kø hver dag.
+          Volt giver dig en lille bærbar oplader med bytteservice, der oplader
+          mobilen i lommen.
+        </p>
+        <div class="buttonContainer">
+          <a><button>Book enkel</button></a>
+          <a href="order.html"><button>Book til camp</button></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

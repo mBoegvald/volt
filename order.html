@@ -46,7 +46,7 @@
         background: #bebebe;
         position: absolute;
         left: -50%;
-        top: 46px;
+        top: 49px;
         z-index: 0;
       }
       .progressbar li:after {
@@ -57,9 +57,10 @@
         display: block;
         font-size: 12px;
         font-weight: bold;
-        color: white;
-        background: #bebebe;
-        border-radius: 3px;
+        color: #bebebe;
+        background: #fff;
+        border-radius: 50%;
+        border: 2px solid #bebebe;
         margin: 5px auto 5px auto;
         position: relative;
         z-index: 1;
@@ -72,6 +73,277 @@
       ul {
         list-style: none;
       }
+
+      .information-wrapper {
+        display: flex;
+        width: 900px;
+        margin: 100px auto 50px;
+      }
+
+      .image-container {
+        width: 100px;
+        height: 100px;
+      }
+
+      .image-circle {
+        border-radius: 50%;
+      }
+
+      .image-container img {
+        width: 100%;
+      }
+
+      .image-text-wrapper {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      .box-text {
+        padding-left: 15px;
+        font-size: 20px;
+        align-self: center;
+      }
+
+      .box-text p:first-child {
+        line-height: normal;
+   
+      }
+
+      .box-text span {
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+
+       .price {
+        color: #a6cc45;
+        font-weight: bold;
+      }
+
+      .check-sign {
+        color: #a6cc45;
+      }
+
+      .information-box-right {
+        margin-left: 100px;
+      }
+
+      .deltager-oversigt {
+        width: 900px;
+        margin: 0 auto;
+      }
+
+      .form-fieldset {
+        border-radius: 8px;
+        border: 2px solid #a6cc45;
+        width: 800px;
+        height: 400px;
+        margin-top: 50px;
+      }
+
+      .input-wrapper {
+        padding-top: 50px;
+        display: flex;  
+        justify-content: center;
+      }
+
+      .deltager-oversigt .add-camp-deltager {
+        border-radius: 8px;
+        background-color: #a6cc45;
+        padding: 10px 20px;
+        border: 0;
+        color: white;
+        margin: 15px 0 0;
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+
+      .deltager-oversigt .add-camp-deltager .cross-sign {
+        padding-left: 20px;
+      }
+
+      fieldset.input-field {
+        width: 300px;
+        height: 70px;
+        border-radius: 8px;
+        border:solid 2px #a6cc45;
+        padding-inline-start: 15px;
+        font-size: 20px;
+      }
+
+      input[type="text"], input[type="tel"] {
+        outline: 0;
+      }
+
+      .deltager-input {
+        border: none;
+        font-size: 20px;
+      }
+
+      .deltager-input::placeholder {
+        color: rgb(228, 228, 228);
+      }
+
+      fieldset.input-field:nth-child(2) {
+        margin-left: 50px;
+      }
+
+      .checkbox-wrapper {
+        display: flex;
+        width: 640px;
+        justify-content: space-between;
+        padding-left: 60px;
+      }
+
+      .checkbox-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        margin-top: 50px;
+        cursor: pointer;
+        user-select: none;
+
+      }
+
+      .checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+
+      .checkbox-custom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 35px;
+        background-color: transparent;
+        border: 1px solid #a6cc45;
+        border-radius: 8px;
+  
+      }
+
+      .checkbox-custom:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .checkbox-container input:checked ~ .checkbox-custom:after {
+        display: block;
+      }
+
+    .checkbox-container .checkbox-custom:after {
+        left: 45%;
+        top: -10px;
+        width: 10px;
+        height: 30px;
+        border: solid #a6cc45;;
+        border-width: 0 3px 3px 0;
+        transform: rotate(35deg);
+
+      }
+
+      .checkbox-container p {
+        padding-left: 15px;
+        font-size: 20px;
+        align-self: center;
+      }
+
+      .submit-button {
+        width: 100%;
+        text-align: center;
+      
+      }
+
+      .submit-deltager {
+        border-radius: 8px;
+        background-color: #a6cc45;
+        padding: 20px 30px;
+        border: 0;
+        color: white;
+        margin: 15px 0 0;
+        font-weight: bold;
+        font-size: 1.2em;
+        cursor: pointer;
+      }
+
+      .step1 {
+        width: 850px;
+        margin: 0 auto;
+    
+      }
+
+      .deltager-form {
+        display: none;
+      }
+
+      .total-price-wrapper {
+        margin-top: 30px;
+        width: 400px;
+        font-size: 20px;
+      }
+
+      .camp-discount {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+        color: #a6cc45;
+      }
+
+      .total-price {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+
+      .form-oversigt {
+        border-radius: 8px;
+        border: 2px solid #a6cc45;
+        width: 800px;
+        height: 100%;
+        margin-top: 50px;
+        display: none;
+      }
+
+      .person-container {
+        width: 600px;
+      
+      }
+
+      .person-information {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 600px;
+        margin: 0 50px 25px;
+        border-bottom: 2px solid #a6cc45;
+      }
+
+      .person-field {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        width: 600px;
+        margin: 50px 50px 0;
+        color: rgb(131, 131, 131);
+      }
+
+      [data-price] {
+        font-weight: bold;
+        text-align: right;
+      }
+
+      div.person-field > p:nth-child(5) {
+        text-align: right;
+      }
+
+      [data-number] {
+        color: #a6cc45;
+      }
+
     </style>
   </head>
   <body>
@@ -85,15 +357,197 @@
             <li>Betaling</li>
           </ul>
         </div>
-        <div class="steps-grid">
-          <section class="step1"></section>
+      </div>
+      <div class="steps-grid">
+
+          <section class="step1">
+            <div class="information-wrapper">
+              <div class="information-box-left">
+                <div class="image-text-wrapper">
+                  <div class="image-container">
+                    <img class="image-circle" src="https://getvolt.dk/458/roskilde-festival-2019.jpg">
+                  </div>
+                  <div class="box-text">
+                  <p>Roskilde:<br><span>Volt bytteservice*</span></p>
+                  <p class="price">179 DKK</p>
+                </div>
+              </div>
+                <p><span class="check-sign">&#x2714;</span> Bærbar oplader til din mobil</p>
+                <p><span class="check-sign">&#x2714;</span> Byt den til en ny når den er tom</p>
+              </div>
+              <div class="information-box-right">
+                  <div class="image-text-wrapper">
+                    <div class="image-container">
+                      <img src="pics/the_volt_charger.png">
+                    </div>
+                    <div class="box-text">
+                        <p>Roskilde:<br><span>Volt-oplader depositum*</span></p>
+                        <p class="price">200 DKK</p>
+                    </div>
+                </div>
+                <p><span class="check-sign">&#x2714;</span> Få dit depositum tilbage når som helst</p>
+                <p><span class="check-sign">&#x2714;</span> Behold og genbrug din Vold-oplader</p>
+              </div>
+            </div>
+
+            <div class="deltager-oversigt">
+
+              <button class="add-camp-deltager">Tilføj camp deltager<span class="cross-sign">&#10010;</span></button>
+
+              <form class="deltager-form" onsubmit="return deltagerList()">
+
+                <fieldset class="form-fieldset">
+                  <div class="input-wrapper">
+                    <fieldset class="input-field">
+                        <legend><label for="deltager-name">Navn</label></legend>
+                        <input id="deltager-name" class="deltager-input" type="text" placeholder="eks. Miklas" required autocomplete="off">
+                    </fieldset>
+
+                    <fieldset class="input-field">
+                        <legend><label for="deltager-tel">Mobil</label></legend>
+                        <input id="deltager-tel" class="deltager-input" type="tel" placeholder="eks. 21 23 23 23" required autocomplete="off">
+                    </fieldset>
+                </div>
+
+                <div class="checkbox-wrapper">
+                    <label class="checkbox-container"><p>Roskilde festival:<br><b>Volt bytteservice</b><br><span class="price">179 DKK</p></span>
+                      <input id="bytte" class="bytteservice-checkbox" type="checkbox" checked value="Bytteservice">
+                      <span class="checkbox-custom"></span>
+                    </label>
+
+                    <label class="checkbox-container"><p>Roskilde festival:<br><b>Volt-oplader depositum</b><br><span class="price">200 DKK</p></span>
+                      <input id="depositum" class="bytteservice-checkbox" type="checkbox" value="Depositum">
+                      <span class="checkbox-custom"></span>
+                    </label>
+                </div>
+                <div class="submit-button">
+                  <input class="submit-deltager" type="submit" value="Tilføj deltager">
+              </div>
+            </fieldset>
+          </form>
+
+          <fieldset class="form-oversigt">
+            <div class="person-field">
+              <P></P>
+              <p>Name:</p>
+              <p>Mobil:</p>
+              <p>Produkter:</p>
+              <p>Pris:</p>
+            </div>
+
+            <div class="data-container"></div>
+
+            <template class="data-template">
+                  <div class="person-information">
+                    <p data-number></p>
+                    <p data-name></p>
+                    <p data-mobil></p>
+                    <p data-service></p>
+                    <p data-price></p>
+                  </div>
+              </div>
+            </template>
+          </fieldset>
+
+          <div class="total-price-wrapper">
+              <div class="camp-discount">
+                <p><i>Camp Rabat</i></p>
+                <p>0 DKK</p>
+              </div>
+              <div class="total-price">
+                <p><i>I alt</i></p>
+                <p>0 DKK</p>
+              </div>
+            </div>
+
+        </div>
+
+          </section>
+
           <section class="step2"></section>
           <section class="step3"></section>
           <section class="step4"></section>
         </div>
         <div class="infoBox"></div>
         <div class="list"></div>
-      </div>
     </section>
+
+    <script>
+    "use strict";
+
+    document.querySelector(".add-camp-deltager").addEventListener("click", () => {
+      document.querySelector(".deltager-form").style.display = "block";
+    });
+
+    let deltagerNumber = 1;
+    let deltagerName;
+    let deltagerTel;
+    let deltagerBytte;
+    let deltagerDepositum;
+
+
+    let deltager = {
+      deltagerNumber: 0,
+      deltagerName: "-deltager name-",
+      deltagerTel: "-deltager tel-",
+      deltagerService: "-deltager -service",
+      deltagerPrice: "-deltager price-"
+    }
+
+    let campArray = []
+
+   
+
+   /*  document.querySelector(".submit-deltager").addEventListener("click", deltagerList); */
+
+    function deltagerList() {
+      deltager.deltagerName = document.querySelector("#deltager-name").value;
+      deltager.deltagerTel = document.querySelector("#deltager-tel").value;
+      deltager.deltagerBytte = document.querySelector("#bytte").checked;
+      deltager.deltagerDepositum = document.querySelector("#depositum").checked;
+
+
+      if (deltager.deltagerBytte === true && deltager.deltagerDepositum === true) {
+        deltager.deltagerPrice = 179 + 200;
+        deltager.deltagerService = "Bytteserver & Depositum"
+      }
+      if (deltager.deltagerBytte === false && deltager.deltagerDepositum === true) {
+        deltager.deltagerPrice = 200;
+        deltager.deltagerService = "Depositum"
+      }
+      if (deltager.deltagerBytte === true && deltager.deltagerDepositum === false) {
+        deltager.deltagerPrice = 179;
+        deltager.deltagerService = "Bytteserver"
+      }
+
+      console.log(deltagerName);
+      campArray.pop(deltager);
+      campArray.push(deltager);
+     
+
+      campArray.forEach( deltager => {
+        let newNumber = deltagerNumber++;
+        const clone = document.querySelector("template.data-template").content.cloneNode(true);
+        console.log(newNumber);
+
+        clone.querySelector("[data-name]").innerHTML = deltager.deltagerName;
+        clone.querySelector("[data-mobil]").innerHTML = deltager.deltagerTel;
+        clone.querySelector("[data-service]").innerHTML = deltager.deltagerService;
+        clone.querySelector("[data-price]").innerHTML = deltager.deltagerPrice + " DKK";
+        clone.querySelector("[data-number]").innerHTML = deltager.deltagerNumber + newNumber;
+
+        document.querySelector(".data-container").appendChild(clone);
+      });
+
+      console.log(campArray);
+      return false;
+    }
+    
+    document.querySelector(".submit-deltager").addEventListener("click", () => {
+      document.querySelector(".form-oversigt").style.display = "block";
+      console.log("test");
+    });
+
+    </script>
   </body>
 </html>

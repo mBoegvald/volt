@@ -410,7 +410,7 @@
                 Tilføj camp deltager<span class="cross-sign">&#10010;</span>
               </button>
 
-              <form class="deltager-form" onsubmit="return deltagerList()">
+              <form class="deltager-form">
                 <fieldset class="form-fieldset">
                   <div class="input-wrapper">
                     <fieldset class="input-field">
@@ -532,13 +532,13 @@
         });
 
       let campArray = [];
-      let deltagerNumber = 1;
+      let deltagerNumber;
       let deltagerName;
       let deltagerTel;
       let deltagerBytte;
       let deltagerDepositum;
 
-      let deltager = {
+      const Deltager = {
         deltagerNumber: 0,
         deltagerName: "-deltager name-",
         deltagerTel: "-deltager tel-",
@@ -546,71 +546,77 @@
         deltagerPrice: "-deltager price-"
       };
 
-      /*  document.querySelector(".submit-deltager").addEventListener("click", deltagerList); */
+   
+  const form = document.querySelector("form");
+
+     form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          document.querySelector(".form-oversigt").style.display = "block";
+          deltagerList();
+        });
+
+      campArray.push(Deltager);
 
       function deltagerList() {
-        deltager.deltagerName = document.querySelector("#deltager-name").value;
-        deltager.deltagerTel = document.querySelector("#deltager-tel").value;
-        deltager.deltagerBytte = document.querySelector("#bytte").checked;
-        deltager.deltagerDepositum = document.querySelector(
+     
+        Deltager.deltagerName = document.querySelector("#deltager-name").value;
+        Deltager.deltagerTel = document.querySelector("#deltager-tel").value;
+        Deltager.deltagerBytte = document.querySelector("#bytte").checked;
+        Deltager.deltagerDepositum = document.querySelector(
           "#depositum"
         ).checked;
 
         if (
-          deltager.deltagerBytte === true &&
+          Deltager.deltagerBytte === true &&
+          Deltager.deltagerDepositum === true
+        ) {
+          Deltager.deltagerPrice = 179 + 200;
+          Deltager.deltagerService = "Bytteservice & Depositum";
+        }
+        else if (
+          Deltager.deltagerBytte === false &&
           deltager.deltagerDepositum === true
         ) {
-          deltager.deltagerPrice = 179 + 200;
-          deltager.deltagerService = "Bytteservice & Depositum";
+          Deltager.deltagerPrice = 200;
+          Deltager.deltagerService = "Depositum";
         }
-        if (
-          deltager.deltagerBytte === false &&
-          deltager.deltagerDepositum === true
+        else if (
+          Deltager.deltagerBytte === true &&
+          Deltager.deltagerDepositum === false
         ) {
-          deltager.deltagerPrice = 200;
-          deltager.deltagerService = "Depositum";
-        }
-        if (
-          deltager.deltagerBytte === true &&
-          deltager.deltagerDepositum === false
-        ) {
-          deltager.deltagerPrice = 179;
-          deltager.deltagerService = "Bytteservice";
+          Deltager.deltagerPrice = 179;
+          Deltager.deltagerService = "Bytteservice";
+        } else if
+         (Deltager.deltagerBytte === false &&
+          Deltager.deltagerDepositum === false
+          ) {
+          Deltager.deltagerPrice = 179;
+          Deltager.deltagerService = "Bytteservice"
         }
 
-        console.log(deltagerName);
-        campArray.pop(deltager);
-        campArray.push(deltager);
+        campArray.forEach(campDeltager => {
 
-        campArray.forEach(deltager => {
-          let newNumber = deltagerNumber++;
+          campDeltager.deltagerNumber++;
+
           const clone = document
             .querySelector("template.data-template")
             .content.cloneNode(true);
-          console.log(newNumber);
+ 
 
-          clone.querySelector("[data-name]").innerHTML = deltager.deltagerName;
-          clone.querySelector("[data-mobil]").innerHTML = deltager.deltagerTel;
+          clone.querySelector("[data-name]").innerHTML =
+            campDeltager.deltagerName;
+          clone.querySelector("[data-mobil]").innerHTML =
+           campDeltager.deltagerTel;
           clone.querySelector("[data-service]").innerHTML =
-            deltager.deltagerService;
+            campDeltager.deltagerService;
           clone.querySelector("[data-price]").innerHTML =
-            deltager.deltagerPrice + " DKK";
+            campDeltager.deltagerPrice + " DKK";
           clone.querySelector("[data-number]").innerHTML =
-            deltager.deltagerNumber + newNumber;
+            campDeltager.deltagerNumber;
 
           document.querySelector(".data-container").appendChild(clone);
         });
-
-        console.log(campArray);
-        return false;
       }
-
-      document
-        .querySelector(".submit-deltager")
-        .addEventListener("click", () => {
-          document.querySelector(".form-oversigt").style.display = "block";
-          console.log("test");
-        });
 
       // step 2
     </script>

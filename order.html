@@ -499,9 +499,15 @@
             </div>
           </section>
 
-          <section class="step2 step-slide"></section>
-          <section class="step3 step-slide"></section>
-          <section class="step4 step-slide"></section>
+          <section class="step2 step-slide">
+            <button class="next">NEXT</button>
+          </section>
+          <section class="step3 step-slide">
+            <button class="next">NEXT</button>
+          </section>
+          <section class="step4 step-slide">
+            <button class="next">NEXT</button>
+          </section>
         </div>
       </div>
     </section>
@@ -518,10 +524,27 @@
     <script>
       "use strict";
 
-      document.querySelector(".next").addEventListener("click", function() {
-        document.querySelector(".steps-grid").style.transform =
-          "translateX(-25%)";
-      });
+      let campArray = [];
+      let deltagerNumber;
+      let deltagerName;
+      let deltagerTel;
+      let deltagerBytte;
+      let deltagerDepositum;
+      let buttons = document.querySelectorAll(".next");
+
+      for (let i = 0; i < buttons.length; i++) {
+        let self = buttons[i];
+        self.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (event.target.parentNode.className != "step4 step-slide") {
+            console.log(event);
+            document.querySelector(".steps-grid").style.transform =
+              "translateX(-25%)" +
+              document.querySelector(".steps-grid").style.transform;
+          }
+        });
+      }
 
       // Step 1
 
@@ -531,13 +554,6 @@
           document.querySelector(".deltager-form").style.display = "block";
         });
 
-      let campArray = [];
-      let deltagerNumber;
-      let deltagerName;
-      let deltagerTel;
-      let deltagerBytte;
-      let deltagerDepositum;
-
       const Deltager = {
         deltagerNumber: 0,
         deltagerName: "-deltager name-",
@@ -546,19 +562,17 @@
         deltagerPrice: "-deltager price-"
       };
 
-   
-  const form = document.querySelector("form");
+      const form = document.querySelector("form");
 
-     form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          document.querySelector(".form-oversigt").style.display = "block";
-          deltagerList();
-        });
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        document.querySelector(".form-oversigt").style.display = "block";
+        deltagerList();
+      });
 
       campArray.push(Deltager);
 
       function deltagerList() {
-     
         Deltager.deltagerName = document.querySelector("#deltager-name").value;
         Deltager.deltagerTel = document.querySelector("#deltager-tel").value;
         Deltager.deltagerBytte = document.querySelector("#bytte").checked;
@@ -572,41 +586,37 @@
         ) {
           Deltager.deltagerPrice = 179 + 200;
           Deltager.deltagerService = "Bytteservice & Depositum";
-        }
-        else if (
+        } else if (
           Deltager.deltagerBytte === false &&
           deltager.deltagerDepositum === true
         ) {
           Deltager.deltagerPrice = 200;
           Deltager.deltagerService = "Depositum";
-        }
-        else if (
+        } else if (
           Deltager.deltagerBytte === true &&
           Deltager.deltagerDepositum === false
         ) {
           Deltager.deltagerPrice = 179;
           Deltager.deltagerService = "Bytteservice";
-        } else if
-         (Deltager.deltagerBytte === false &&
+        } else if (
+          Deltager.deltagerBytte === false &&
           Deltager.deltagerDepositum === false
-          ) {
+        ) {
           Deltager.deltagerPrice = 179;
-          Deltager.deltagerService = "Bytteservice"
+          Deltager.deltagerService = "Bytteservice";
         }
 
         campArray.forEach(campDeltager => {
-
           campDeltager.deltagerNumber++;
 
           const clone = document
             .querySelector("template.data-template")
             .content.cloneNode(true);
- 
 
           clone.querySelector("[data-name]").innerHTML =
             campDeltager.deltagerName;
           clone.querySelector("[data-mobil]").innerHTML =
-           campDeltager.deltagerTel;
+            campDeltager.deltagerTel;
           clone.querySelector("[data-service]").innerHTML =
             campDeltager.deltagerService;
           clone.querySelector("[data-price]").innerHTML =

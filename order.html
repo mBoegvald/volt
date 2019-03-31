@@ -211,7 +211,7 @@
       .checkbox-container {
         display: block;
         position: relative;
-        padding-left: 35px;
+        padding-left: 50px;
         margin-bottom: 12px;
         margin-top: 50px;
         cursor: pointer;
@@ -319,15 +319,16 @@
 
       .person-information {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         width: 600px;
-        margin: 0 50px 25px;
+        margin: 20px 50px 25px;
+        padding-bottom: 10px;
         border-bottom: 2px solid #a6cc45;
       }
 
       .person-field {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         width: 600px;
         margin: 50px 50px 0;
         color: rgb(131, 131, 131);
@@ -344,6 +345,18 @@
 
       [data-number] {
         color: #a6cc45;
+      }
+
+      .edit-person-information {
+        background-color: rgb(126, 126, 126);
+        border-radius: 5px;
+        border: 0;
+        color: #fff;
+        font-size: 12px;
+        width: 40px;
+        height: 20px;
+        justify-self: end;
+   
       }
     </style>
   </head>
@@ -416,7 +429,7 @@
                     <fieldset class="input-field">
                       <legend><label for="deltager-name">Navn</label></legend>
                       <input
-                        id="deltager-name"
+                        id="deltagerName"
                         class="deltager-input"
                         type="text"
                         placeholder="eks. Miklas"
@@ -428,7 +441,7 @@
                     <fieldset class="input-field">
                       <legend><label for="deltager-tel">Mobil</label></legend>
                       <input
-                        id="deltager-tel"
+                        id="deltagerTel"
                         class="deltager-input"
                         type="tel"
                         placeholder="eks. 21 23 23 23"
@@ -518,6 +531,7 @@
         <p data-mobil></p>
         <p data-service></p>
         <p data-price></p>
+        <button class="edit-person-information">Edit</button>
       </div>
     </template>
 
@@ -525,11 +539,12 @@
       "use strict";
 
       let campArray = [];
-      let deltagerNumber;
-      let deltagerName;
-      let deltagerTel;
-      let deltagerBytte;
-      let deltagerDepositum;
+      let deltagerNumber = 1;
+      let deltagerName = document.querySelector("#deltagerName").value;
+      let deltagerTel = document.querySelector("#deltagerTel").value;
+      let deltagerBytte = document.querySelector("#bytte").checked;
+      let deltagerDepositum = document.querySelector("#depositum").checked;
+      let form = document.querySelector(".deltager-form");
       let buttons = document.querySelectorAll(".next");
 
       for (let i = 0; i < buttons.length; i++) {
@@ -554,33 +569,20 @@
           document.querySelector(".deltager-form").style.display = "block";
         });
 
-      const Deltager = {
-        deltagerNumber: 0,
-        deltagerName: "-deltager name-",
-        deltagerTel: "-deltager tel-",
-        deltagerService: "-deltager -service",
-        deltagerPrice: "-deltager price-"
-      };
-
-      const form = document.querySelector("form");
-
-      form.addEventListener("submit", e => {
+      document.querySelector(".submit-deltager").addEventListener("click", (e) => {
         e.preventDefault();
         document.querySelector(".form-oversigt").style.display = "block";
-        deltagerList();
-      });
 
-      campArray.push(Deltager);
+        const Deltager = {
+          deltagerNumber: deltagerNumber++,
+          deltagerName: form.elements.deltagerName.value,
+          deltagerTel: form.elements.deltagerTel.value,
+          deltagerBytte: form.elements.bytte.checked,
+          deltagerDepositum: form.elements.depositum.checked,
+          deltagerPrice: "-deltager price-"
+      };
 
-      function deltagerList() {
-        Deltager.deltagerName = document.querySelector("#deltager-name").value;
-        Deltager.deltagerTel = document.querySelector("#deltager-tel").value;
-        Deltager.deltagerBytte = document.querySelector("#bytte").checked;
-        Deltager.deltagerDepositum = document.querySelector(
-          "#depositum"
-        ).checked;
-
-        if (
+      if (
           Deltager.deltagerBytte === true &&
           Deltager.deltagerDepositum === true
         ) {
@@ -606,12 +608,17 @@
           Deltager.deltagerService = "Bytteservice";
         }
 
-        campArray.forEach(campDeltager => {
-          campDeltager.deltagerNumber++;
+        campArray.push(Deltager);        
 
-          const clone = document
+        deltagerList(campArray);
+      });
+
+      function deltagerList(campArray) {
+        const clone = document
             .querySelector("template.data-template")
             .content.cloneNode(true);
+
+        campArray.forEach(campDeltager => {
 
           clone.querySelector("[data-name]").innerHTML =
             campDeltager.deltagerName;
@@ -623,9 +630,8 @@
             campDeltager.deltagerPrice + " DKK";
           clone.querySelector("[data-number]").innerHTML =
             campDeltager.deltagerNumber;
-
-          document.querySelector(".data-container").appendChild(clone);
         });
+        document.querySelector(".data-container").appendChild(clone);
       }
 
       // step 2

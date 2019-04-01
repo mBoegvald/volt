@@ -1,0 +1,42 @@
+
+.upper-content {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.upper-content h1 {
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+.facebook-signin {
+    background-color: #3C5A99;
+    border: 0;
+    border-radius: 8px;
+    width: 500px;
+    margin: 25px auto;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.facebook-signin .button-text {
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.line-text {
+    width: 500px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px auto 20px;
+}
+
+.line-text span {
+    background: #fff;
+    padding: 0 10px;
+}

@@ -67,9 +67,14 @@
         position: relative;
         z-index: 1;
       }
+      .progressbar li.active {
+        color: black;
+      }
       .progressbar li.active:before,
       .progressbar li.active:after {
         background: #a6cc45;
+        color: white;
+        transition: 1s;
       }
 
       ul {
@@ -356,7 +361,6 @@
         width: 40px;
         height: 20px;
         justify-self: end;
-   
       }
     </style>
   </head>
@@ -365,10 +369,10 @@
       <div class="wrapper">
         <div class="steps">
           <ul class="progressbar">
-            <li>Kurv</li>
-            <li>Registrér</li>
-            <li>Oversigt</li>
-            <li>Betaling</li>
+            <li class="active progress-step1">Kurv</li>
+            <li class="progress-step2">Registrér</li>
+            <li class="progress-step3">Oversigt</li>
+            <li class="progress-step4">Betaling</li>
           </ul>
         </div>
         <div class="steps-grid">
@@ -513,13 +517,15 @@
           </section>
 
           <section class="step2 step-slide">
+            <button class="back">BACK</button>
             <button class="next">NEXT</button>
           </section>
           <section class="step3 step-slide">
+            <button class="back">BACK</button>
             <button class="next">NEXT</button>
           </section>
           <section class="step4 step-slide">
-            <button class="next">NEXT</button>
+            <button class="back">BACK</button>
           </section>
         </div>
       </div>
@@ -546,18 +552,35 @@
       let deltagerDepositum = document.querySelector("#depositum").checked;
       let form = document.querySelector(".deltager-form");
       let buttons = document.querySelectorAll(".next");
+      let backButtons = document.querySelectorAll(".back");
+      let stepCounter = 1;
 
       for (let i = 0; i < buttons.length; i++) {
         let self = buttons[i];
         self.addEventListener("click", function(event) {
           event.preventDefault();
 
-          if (event.target.parentNode.className != "step4 step-slide") {
-            console.log(event);
-            document.querySelector(".steps-grid").style.transform =
-              "translateX(-25%)" +
-              document.querySelector(".steps-grid").style.transform;
-          }
+          stepCounter++;
+          document
+            .querySelector(".progress-step" + stepCounter)
+            .classList.add("active");
+          document.querySelector(".steps-grid").style.transform =
+            "translateX(-25%)" +
+            document.querySelector(".steps-grid").style.transform;
+        });
+      }
+
+      for (let i = 0; i < backButtons.length; i++) {
+        let self = backButtons[i];
+        self.addEventListener("click", function(event) {
+          event.preventDefault();
+          document
+            .querySelector(".progress-step" + stepCounter)
+            .classList.remove("active");
+          stepCounter--;
+          document.querySelector(".steps-grid").style.transform =
+            "translateX(+25%)" +
+            document.querySelector(".steps-grid").style.transform;
         });
       }
 
@@ -569,57 +592,58 @@
           document.querySelector(".deltager-form").style.display = "block";
         });
 
-      document.querySelector(".submit-deltager").addEventListener("click", (e) => {
-        e.preventDefault();
-        document.querySelector(".form-oversigt").style.display = "block";
+      document
+        .querySelector(".submit-deltager")
+        .addEventListener("click", e => {
+          e.preventDefault();
+          document.querySelector(".form-oversigt").style.display = "block";
 
-        const Deltager = {
-          deltagerNumber: deltagerNumber++,
-          deltagerName: form.elements.deltagerName.value,
-          deltagerTel: form.elements.deltagerTel.value,
-          deltagerBytte: form.elements.bytte.checked,
-          deltagerDepositum: form.elements.depositum.checked,
-          deltagerPrice: "-deltager price-"
-      };
+          const Deltager = {
+            deltagerNumber: deltagerNumber++,
+            deltagerName: form.elements.deltagerName.value,
+            deltagerTel: form.elements.deltagerTel.value,
+            deltagerBytte: form.elements.bytte.checked,
+            deltagerDepositum: form.elements.depositum.checked,
+            deltagerPrice: "-deltager price-"
+          };
 
-      if (
-          Deltager.deltagerBytte === true &&
-          Deltager.deltagerDepositum === true
-        ) {
-          Deltager.deltagerPrice = 179 + 200;
-          Deltager.deltagerService = "Bytteservice & Depositum";
-        } else if (
-          Deltager.deltagerBytte === false &&
-          deltager.deltagerDepositum === true
-        ) {
-          Deltager.deltagerPrice = 200;
-          Deltager.deltagerService = "Depositum";
-        } else if (
-          Deltager.deltagerBytte === true &&
-          Deltager.deltagerDepositum === false
-        ) {
-          Deltager.deltagerPrice = 179;
-          Deltager.deltagerService = "Bytteservice";
-        } else if (
-          Deltager.deltagerBytte === false &&
-          Deltager.deltagerDepositum === false
-        ) {
-          Deltager.deltagerPrice = 179;
-          Deltager.deltagerService = "Bytteservice";
-        }
+          if (
+            Deltager.deltagerBytte === true &&
+            Deltager.deltagerDepositum === true
+          ) {
+            Deltager.deltagerPrice = 179 + 200;
+            Deltager.deltagerService = "Bytteservice & Depositum";
+          } else if (
+            Deltager.deltagerBytte === false &&
+            deltager.deltagerDepositum === true
+          ) {
+            Deltager.deltagerPrice = 200;
+            Deltager.deltagerService = "Depositum";
+          } else if (
+            Deltager.deltagerBytte === true &&
+            Deltager.deltagerDepositum === false
+          ) {
+            Deltager.deltagerPrice = 179;
+            Deltager.deltagerService = "Bytteservice";
+          } else if (
+            Deltager.deltagerBytte === false &&
+            Deltager.deltagerDepositum === false
+          ) {
+            Deltager.deltagerPrice = 179;
+            Deltager.deltagerService = "Bytteservice";
+          }
 
-        campArray.push(Deltager);        
+          campArray.push(Deltager);
 
-        deltagerList(campArray);
-      });
+          deltagerList(campArray);
+        });
 
       function deltagerList(campArray) {
         const clone = document
-            .querySelector("template.data-template")
-            .content.cloneNode(true);
+          .querySelector("template.data-template")
+          .content.cloneNode(true);
 
         campArray.forEach(campDeltager => {
-
           clone.querySelector("[data-name]").innerHTML =
             campDeltager.deltagerName;
           clone.querySelector("[data-mobil]").innerHTML =

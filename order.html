@@ -77,20 +77,20 @@
                 <fieldset class="form-fieldset">
                   <div class="input-wrapper">
                     <fieldset class="input-field">
-                      <legend><label for="deltager-name">Navn</label></legend>
+                      <legend><label for="deltagerName">Navn</label></legend>
                       <input
                         id="deltagerName"
                         class="deltager-input"
                         type="text"
                         placeholder="eks. Miklas"
-                        pattern="^[a-zA-Z-æøåÆØÅ]+$"
+                        pattern="^[a-zA-Z-æøåÆØÅ ]+$"
                         required
                         autocomplete="off"
                       />
                     </fieldset>
 
-                    <fieldset class="input-field">
-                      <legend><label for="deltager-tel">Mobil</label></legend>
+                    <fieldset class="input-field telefon-input">
+                      <legend><label for="deltagerTel">Mobil</label></legend>
                       <input
                         id="deltagerTel"
                         class="deltager-input"
@@ -198,6 +198,62 @@
               </button>
               <p class="line-text"><span>Eller signup med email</span></p>
             </div>
+
+           <form class="signup-form">
+
+            <div class="fornavn-efternavn">
+              <label>
+                <span>Fornavn</span>
+                <input type="text" placeholder="Fornavn" class="fornavn">
+              </label>
+              <label>
+                <span>Efternavn</span>
+                <input type="text" placeholder="Jensen" class="efternavn">
+              </label>
+            </div>
+          <div class="signup">
+            <label>
+              <span>Land</span>
+              <input type="text" placeholder="Land" class="land">
+            </label>
+            <label>
+                <span>Mobil</span>
+                <input type="tel" placeholder="+45 23 23 23 23" class="mobile">
+            </label>
+            <label>
+                <span>E-mail</span>
+                <input type="email" placeholder="E-mail" class="email">
+            </label>
+            <label>
+                <span>Adgangskode</span>
+                <input type="password" placeholder="Adgangskode" class="adgangskode">
+            </label>
+            <p>Bruges til login i Volt-appen</p>
+          </div>
+
+            <div class="adresse-information">
+              <label>
+                  <span>Adresse</span>
+                  <input type="text" placeholder="Adresse" class="adresse">
+              </label>
+              <label>
+                  <span>Adresse (linje 2)</span>
+                  <input type="text" placeholder="Adresse (linje 2)" class="adresse">
+              </label>
+              
+              <div class="postnummer-by">
+                  <label>
+                      <span>Postnummer</span>
+                      <input type="tel" placeholder="Postnummer" class="postnummer">
+                  </label>
+                  <label>
+                      <span>By</span>
+                      <input type="text" placeholder="By" class="by">
+                  </label>
+              </div>
+          </div>
+           </form>
+
           </section>
 
           <section class="step3 step-slide">
@@ -272,6 +328,7 @@
           document.querySelector(".deltager-form").style.display = "block";
         });
 
+
       document
         .querySelector(".submit-deltager")
         .addEventListener("click", e => {
@@ -279,10 +336,25 @@
           console.log(form.elements.deltagerTel.checkValidity());
           console.log(form.elements.deltagerName.checkValidity());
 
+          document.querySelector("fieldset.input-field").style.border = "2px solid #a6cc45";
+          document.querySelector(".telefon-input").style.border = "2px solid #a6cc45";
+            
+          if (form.elements.deltagerName.checkValidity() === false)
+            {
+              document.querySelector("fieldset.input-field").style.border = "2px solid red";
+            }
+          if (form.elements.deltagerTel.checkValidity() === false)
+            {
+              document.querySelector(".telefon-input").style.border = "2px solid red";
+            }
+
           if (
             form.elements.deltagerName.checkValidity() === true &&
             form.elements.deltagerTel.checkValidity() === true
           ) {
+
+          
+
             document.querySelector(".form-oversigt").style.display = "block";
 
             const Deltager = {

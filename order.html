@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/section1.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/section1.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <title>Order</title>
-    <style>
-      
-    </style>
+    <style></style>
   </head>
   <body>
     <section>
@@ -163,21 +161,25 @@
             </div>
 
             <div class="leveringsmuligheder">
-                <p>Leveringsmuligheder</p>
-                <button class="afhentning-button">Afhentning på festivalen eller hos Volt<span>Gratis</span></button>
-                <button class="posthus-button">Leveret til nærmeste posthus<span>50 DKK</span></button>
+              <p>Leveringsmuligheder</p>
+              <button class="afhentning-button">
+                Afhentning på festivalen eller hos Volt<span>Gratis</span>
+              </button>
+              <button class="posthus-button">
+                Leveret til nærmeste posthus<span>50 DKK</span>
+              </button>
             </div>
 
             <div class="information-i-bunden">
               <p>
-                *På festivalen får du en bærbar oplader inkl. kable til
-                  din telefon. Når den bærbare oplader er tom, kan du bytte
-                  den til en ny og skal ikke vente på opladningen.
+                *På festivalen får du en bærbar oplader inkl. kable til din
+                telefon. Når den bærbare oplader er tom, kan du bytte den til en
+                ny og skal ikke vente på opladningen.
               </p>
               <p>
                 *For at benytte Volts opladningsservice, skal du betale et
-                depositum for den bærbare Volt-oplader. Har du allerede
-                En volt-oplader fra tidligere, vælger du blot dette i formularen.
+                depositum for den bærbare Volt-oplader. Har du allerede En
+                volt-oplader fra tidligere, vælger du blot dette i formularen.
               </p>
             </div>
           </section>
@@ -262,6 +264,7 @@
         .querySelector(".submit-deltager")
         .addEventListener("click", e => {
           e.preventDefault();
+
           document.querySelector(".form-oversigt").style.display = "block";
 
           const Deltager = {
@@ -298,10 +301,16 @@
             Deltager.deltagerPrice = 179;
             Deltager.deltagerService = "Bytteservice";
           }
-      
+
           campArray.push(Deltager);
 
           deltagerList(campArray);
+
+          let fullPrice = 0;
+          for (let i = 0; i < campArray.length; i++) {
+            fullPrice += campArray[i].deltagerPrice;
+          }
+          document.querySelector("[data-ialt]").textContent = fullPrice;
         });
 
       function deltagerList(campArray) {
@@ -320,7 +329,6 @@
             campDeltager.deltagerPrice + " DKK";
           clone.querySelector("[data-number]").innerHTML =
             campDeltager.deltagerNumber;
-
         });
         document.querySelector(".data-container").appendChild(clone);
       }

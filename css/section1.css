@@ -1,323 +1,323 @@
 .information-wrapper {
-    display: flex;
-    width: 900px;
-    margin: 100px auto 50px;
-  }
+  display: flex;
+  width: 900px;
+  margin: 100px auto 50px;
+}
 
-  .image-container {
-    width: 100px;
-    height: 100px;
-  }
+.image-container {
+  width: 100px;
+  height: 100px;
+}
 
-  .image-circle {
-    border-radius: 50%;
-  }
+.image-circle {
+  border-radius: 50%;
+}
 
-  .image-container img {
-    width: 100%;
-  }
+.image-container img {
+  width: 100%;
+}
 
-  .image-text-wrapper {
-    display: flex;
-    margin-bottom: 20px;
-  }
+.image-text-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
 
-  .box-text {
-    padding-left: 15px;
-    font-size: 20px;
-    align-self: center;
-  }
+.box-text {
+  padding-left: 15px;
+  font-size: 20px;
+  align-self: center;
+}
 
-  .box-text p:first-child {
-    line-height: normal;
-  }
+.box-text p:first-child {
+  line-height: normal;
+}
 
-  .box-text span {
-    font-weight: bold;
-    font-size: 1.1em;
-  }
+.box-text span {
+  font-weight: bold;
+  font-size: 1.1em;
+}
 
-  .price {
-    color: #a6cc45;
-    font-weight: bold;
-  }
+.price {
+  color: #a6cc45;
+  font-weight: bold;
+}
 
-  .check-sign {
-    color: #a6cc45;
-  }
+.check-sign {
+  color: #a6cc45;
+}
 
-  .information-box-right {
-    margin-left: 100px;
-  }
+.information-box-right {
+  margin-left: 100px;
+}
 
-  .deltager-oversigt {
-    width: 900px;
-    margin: 0 auto;
-  }
+.deltager-oversigt {
+  width: 900px;
+  margin: 0 auto;
+}
 
-  .form-fieldset {
-    border-radius: 8px;
-    border: 2px solid #a6cc45;
-    width: 800px;
-    height: 400px;
-    margin-top: 50px;
-  }
+.form-fieldset {
+  border-radius: 8px;
+  border: 2px solid #a6cc45;
+  width: 800px;
+  height: 400px;
+  margin-top: 50px;
+}
 
-  .input-wrapper {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-  }
+.input-wrapper {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
 
-  .deltager-oversigt .add-camp-deltager {
-    border-radius: 8px;
-    background-color: #a6cc45;
-    padding: 10px 20px;
-    border: 0;
-    color: white;
-    margin: 15px 0 0;
-    font-weight: bold;
-    font-size: 1.2em;
-    cursor: pointer;
-  }
+.deltager-oversigt .add-camp-deltager {
+  border-radius: 8px;
+  background-color: #a6cc45;
+  padding: 10px 20px;
+  border: 0;
+  color: white;
+  margin: 15px 0 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+}
 
-  .deltager-oversigt .add-camp-deltager .cross-sign {
-    padding-left: 20px;
-  }
+.deltager-oversigt .add-camp-deltager .cross-sign {
+  padding-left: 20px;
+}
 
-  fieldset.input-field {
-    width: 300px;
-    height: 70px;
-    border-radius: 8px;
-    border: solid 2px #a6cc45;
-    padding-inline-start: 15px;
-    font-size: 20px;
-  }
+fieldset.input-field {
+  width: 300px;
+  height: 70px;
+  border-radius: 8px;
+  border: solid 2px #a6cc45;
+  padding-inline-start: 15px;
+  font-size: 20px;
+}
 
-  input[type="text"],
-  input[type="tel"] {
-    outline: 0;
-  }
+input[type="text"],
+input[type="tel"] {
+  outline: 0;
+}
 
-  .deltager-input {
-    border: none;
-    font-size: 20px;
-  }
+.deltager-input {
+  border: none;
+  font-size: 20px;
+}
 
-  .deltager-input::placeholder {
-    color: rgb(228, 228, 228);
-  }
+.deltager-input::placeholder {
+  color: rgb(228, 228, 228);
+}
 
-  fieldset.input-field:nth-child(2) {
-    margin-left: 50px;
-  }
+fieldset.input-field:nth-child(2) {
+  margin-left: 50px;
+}
 
-  .checkbox-wrapper {
-    display: flex;
-    width: 640px;
-    justify-content: space-between;
-    padding-left: 60px;
-  }
+.checkbox-wrapper {
+  display: flex;
+  width: 640px;
+  justify-content: space-between;
+  padding-left: 60px;
+}
 
-  .checkbox-container {
-    display: block;
-    position: relative;
-    padding-left: 50px;
-    margin-bottom: 12px;
-    margin-top: 50px;
-    cursor: pointer;
-    user-select: none;
-  }
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 50px;
+  margin-bottom: 12px;
+  margin-top: 50px;
+  cursor: pointer;
+  user-select: none;
+}
 
-  .checkbox-container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
-  .checkbox-custom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 35px;
-    width: 35px;
-    background-color: transparent;
-    border: 1px solid #a6cc45;
-    border-radius: 8px;
-  }
+.checkbox-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 35px;
+  width: 35px;
+  background-color: transparent;
+  border: 1px solid #a6cc45;
+  border-radius: 8px;
+}
 
-  .checkbox-custom:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
+.checkbox-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
 
-  .checkbox-container input:checked ~ .checkbox-custom:after {
-    display: block;
-  }
+.checkbox-container input:checked ~ .checkbox-custom:after {
+  display: block;
+}
 
-  .checkbox-container .checkbox-custom:after {
-    left: 45%;
-    top: -10px;
-    width: 10px;
-    height: 30px;
-    border: solid #a6cc45;
-    border-width: 0 3px 3px 0;
-    transform: rotate(35deg);
-  }
+.checkbox-container .checkbox-custom:after {
+  left: 45%;
+  top: -10px;
+  width: 10px;
+  height: 30px;
+  border: solid #a6cc45;
+  border-width: 0 3px 3px 0;
+  transform: rotate(35deg);
+}
 
-  .checkbox-container p {
-    padding-left: 15px;
-    font-size: 20px;
-    align-self: center;
-  }
+.checkbox-container p {
+  padding-left: 15px;
+  font-size: 20px;
+  align-self: center;
+}
 
-  .submit-button {
-    width: 100%;
-    text-align: center;
-  }
+.submit-button {
+  width: 100%;
+  text-align: center;
+}
 
-  .submit-deltager {
-    border-radius: 8px;
-    background-color: #a6cc45;
-    padding: 20px 30px;
-    border: 0;
-    color: white;
-    margin: 15px 0 0;
-    font-weight: bold;
-    font-size: 1.2em;
-    cursor: pointer;
-  }
+.submit-deltager {
+  border-radius: 8px;
+  background-color: #a6cc45;
+  padding: 20px 30px;
+  border: 0;
+  color: white;
+  margin: 15px 0 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  cursor: pointer;
+}
 
-  .deltager-form {
-    display: none;
-  }
+.deltager-form {
+  display: none;
+}
 
-  .total-price-wrapper {
-    margin-top: 30px;
-    width: 400px;
-    font-size: 20px;
-  }
+.total-price-wrapper {
+  margin-top: 30px;
+  width: 400px;
+  font-size: 20px;
+}
 
-  .camp-discount {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid black;
-    color: #a6cc45;
-  }
+.camp-discount {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  color: #a6cc45;
+}
 
-  .total-price {
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-    margin-top: 10px;
-  }
+.total-price {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
-  .form-oversigt {
-    border-radius: 8px;
-    border: 2px solid #a6cc45;
-    width: 800px;
-    height: 100%;
-    margin-top: 50px;
-    display: none;
-  }
+.form-oversigt {
+  border-radius: 8px;
+  border: 2px solid #a6cc45;
+  width: 800px;
+  height: 100%;
+  margin-top: 50px;
+  display: none;
+}
 
-  .person-container {
-    width: 600px;
-  }
+.person-container {
+  width: 600px;
+}
 
-  .person-information {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 600px;
-    margin: 20px 50px 25px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #a6cc45;
-  }
+.person-information {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 600px;
+  margin: 20px 50px 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #a6cc45;
+}
 
-  .person-field {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    width: 600px;
-    margin: 50px 50px 0;
-    color: rgb(131, 131, 131);
-  }
+.person-field {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  width: 600px;
+  margin: 50px 50px 0;
+  color: rgb(131, 131, 131);
+}
 
-  [data-price] {
-    font-weight: bold;
-    text-align: right;
-  }
+[data-price] {
+  font-weight: bold;
+  text-align: right;
+}
 
-  div.person-field > p:nth-child(5) {
-    text-align: right;
-  }
+div.person-field > p:nth-child(5) {
+  text-align: right;
+}
 
-  [data-number] {
-    color: #a6cc45;
-  }
+[data-number] {
+  color: #a6cc45;
+}
 
-  .edit-person-information {
-    background-color: rgb(126, 126, 126);
-    border-radius: 5px;
-    border: 0;
-    color: #fff;
-    font-size: 12px;
-    width: 40px;
-    height: 20px;
-    justify-self: end;
-  }
+.edit-person-information {
+  background-color: rgb(126, 126, 126);
+  border-radius: 5px;
+  border: 0;
+  color: #fff;
+  font-size: 12px;
+  width: 40px;
+  height: 20px;
+  justify-self: end;
+}
 
-  .leveringsmuligheder {
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
+.leveringsmuligheder {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
 }
 
 .leveringsmuligheder p {
-    color: rgb(163, 163, 163);
-    font-size: 20px;
+  color: rgb(163, 163, 163);
+  font-size: 20px;
 }
 
 .leveringsmuligheder button {
-    border: 2px solid #ccc;
-    background-color: transparent;
-    border-radius: 10px;
-    font-size: 25px;
-    width: 650px;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
+  border: 2px solid #ccc;
+  background-color: transparent;
+  border-radius: 10px;
+  font-size: 25px;
+  width: 650px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .afhentning-button {
-    margin-top: 5px;
-    font-weight: bold;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .posthus-button {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .leveringsmuligheder button span {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .leveringsmuligheder button:focus {
-   border: 2px solid #a6cc45;
-   outline: 0;
+  border: 2px solid #a6cc45;
+  outline: 0;
 }
 
 .information-i-bunden {
-    width: 650px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
+  width: 650px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 .information-i-bunden p {
-    font-size: 12px;
-    color: rgb(163, 163, 163);
-    flex-basis: 300px;
+  font-size: 12px;
+  color: rgb(163, 163, 163);
+  flex-basis: 300px;
 }

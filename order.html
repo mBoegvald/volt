@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/section1.css" />
-    <link rel="stylesheet" href="css/section2.css">
+    <link rel="stylesheet" href="css/section2.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Order</title>
     <style></style>
@@ -83,6 +83,7 @@
                         class="deltager-input"
                         type="text"
                         placeholder="eks. Miklas"
+                        pattern="^[a-zA-Z-æøåÆØÅ]+$"
                         required
                         autocomplete="off"
                       />
@@ -95,6 +96,7 @@
                         class="deltager-input"
                         type="tel"
                         placeholder="eks. 21 23 23 23"
+                        pattern="[0-9]{8}"
                         required
                         autocomplete="off"
                       />
@@ -188,13 +190,14 @@
             <button class="back">BACK</button>
             <button class="next">NEXT</button>
 
-          <div class="upper-content">
-            <h1>Sign up for Volt</h1>
-            <button class="facebook-signin"><span><img src="pics/facebook-logo.png"></span><span class="button-text">Fortsæt med Facebook</span></button>
-            <p class="line-text"><span>Eller signup med email</span></p>
-          </div>
-
-          
+            <div class="upper-content">
+              <h1>Sign up for Volt</h1>
+              <button class="facebook-signin">
+                <span><img src="pics/facebook-logo.png"/></span
+                ><span class="button-text">Fortsæt med Facebook</span>
+              </button>
+              <p class="line-text"><span>Eller signup med email</span></p>
+            </div>
           </section>
 
           <section class="step3 step-slide">
@@ -273,62 +276,70 @@
         .querySelector(".submit-deltager")
         .addEventListener("click", e => {
           e.preventDefault();
-
-          document.querySelector(".form-oversigt").style.display = "block";
-
-          const Deltager = {
-            deltagerNumber: deltagerNumber++,
-            deltagerName: form.elements.deltagerName.value,
-            deltagerTel: form.elements.deltagerTel.value,
-            deltagerBytte: form.elements.bytte.checked,
-            deltagerDepositum: form.elements.depositum.checked,
-            deltagerPrice: "-deltager price-"
-          };
+          console.log(form.elements.deltagerTel.checkValidity());
+          console.log(form.elements.deltagerName.checkValidity());
 
           if (
-            Deltager.deltagerBytte === true &&
-            Deltager.deltagerDepositum === true
+            form.elements.deltagerName.checkValidity() === true &&
+            form.elements.deltagerTel.checkValidity() === true
           ) {
-            Deltager.deltagerPrice = 179 + 200;
-            Deltager.deltagerService = "Bytteservice & Depositum";
-          } else if (
-            Deltager.deltagerBytte === false &&
-            deltager.deltagerDepositum === true
-          ) {
-            Deltager.deltagerPrice = 200;
-            Deltager.deltagerService = "Depositum";
-          } else if (
-            Deltager.deltagerBytte === true &&
-            Deltager.deltagerDepositum === false
-          ) {
-            Deltager.deltagerPrice = 179;
-            Deltager.deltagerService = "Bytteservice";
-          } else if (
-            Deltager.deltagerBytte === false &&
-            Deltager.deltagerDepositum === false
-          ) {
-            Deltager.deltagerPrice = 179;
-            Deltager.deltagerService = "Bytteservice";
-          }
+            document.querySelector(".form-oversigt").style.display = "block";
 
-          campArray.push(Deltager);
+            const Deltager = {
+              deltagerNumber: deltagerNumber++,
+              deltagerName: form.elements.deltagerName.value,
+              deltagerTel: form.elements.deltagerTel.value,
+              deltagerBytte: form.elements.bytte.checked,
+              deltagerDepositum: form.elements.depositum.checked,
+              deltagerPrice: "-deltager price-"
+            };
 
-          deltagerList(campArray);
-
-          let fullPrice = 0;
-          let discountPrice = 0;
-          for (let i = 0; i < campArray.length; i++) {
-           fullPrice += campArray[i].deltagerPrice;
-
-            if (campArray.length >= 5) {
-              discountPrice = (fullPrice/100)*10; //10% discount
-            }  
-            if (campArray.length >= 10) {
-              discountPrice = (fullPrice/100)*20; //20% discount
+            if (
+              Deltager.deltagerBytte === true &&
+              Deltager.deltagerDepositum === true
+            ) {
+              Deltager.deltagerPrice = 179 + 200;
+              Deltager.deltagerService = "Bytteservice & Depositum";
+            } else if (
+              Deltager.deltagerBytte === false &&
+              deltager.deltagerDepositum === true
+            ) {
+              Deltager.deltagerPrice = 200;
+              Deltager.deltagerService = "Depositum";
+            } else if (
+              Deltager.deltagerBytte === true &&
+              Deltager.deltagerDepositum === false
+            ) {
+              Deltager.deltagerPrice = 179;
+              Deltager.deltagerService = "Bytteservice";
+            } else if (
+              Deltager.deltagerBytte === false &&
+              Deltager.deltagerDepositum === false
+            ) {
+              Deltager.deltagerPrice = 179;
+              Deltager.deltagerService = "Bytteservice";
             }
+
+            campArray.push(Deltager);
+
+            deltagerList(campArray);
+
+            let fullPrice = 0;
+            let discountPrice = 0;
+            for (let i = 0; i < campArray.length; i++) {
+              fullPrice += campArray[i].deltagerPrice;
+
+              if (campArray.length >= 5) {
+                discountPrice = (fullPrice / 100) * 10; //10% discount
+              }
+              if (campArray.length >= 10) {
+                discountPrice = (fullPrice / 100) * 20; //20% discount
+              }
+            }
+            document.querySelector("[data-ialt]").textContent =
+              fullPrice - discountPrice;
+            document.querySelector("[data-rabat").textContent = discountPrice;
           }
-          document.querySelector("[data-ialt]").textContent = fullPrice - discountPrice;
-          document.querySelector("[data-rabat").textContent = discountPrice;
         });
 
       function deltagerList(campArray) {

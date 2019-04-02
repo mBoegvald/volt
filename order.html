@@ -23,245 +23,322 @@
         </div>
         <div class="steps-grid">
           <section class="step1 step-slide">
-            <button class="next">NEXT</button>
-            <div class="information-wrapper">
-              <div class="information-box-left">
-                <div class="image-text-wrapper">
-                  <div class="image-container">
-                    <img
-                      class="image-circle"
-                      src="https://getvolt.dk/458/roskilde-festival-2019.jpg"
-                    />
+            <div class="stepContainer">
+              <button class="next">NEXT</button>
+              <div class="information-wrapper">
+                <div class="information-box-left">
+                  <div class="image-text-wrapper">
+                    <div class="image-container">
+                      <img
+                        class="image-circle"
+                        src="https://getvolt.dk/458/roskilde-festival-2019.jpg"
+                      />
+                    </div>
+                    <div class="box-text">
+                      <p>Roskilde:<br /><span>Volt bytteservice*</span></p>
+                      <p class="price">179 DKK</p>
+                    </div>
                   </div>
-                  <div class="box-text">
-                    <p>Roskilde:<br /><span>Volt bytteservice*</span></p>
-                    <p class="price">179 DKK</p>
-                  </div>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Bærbar oplader til
+                    din mobil
+                  </p>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Byt den til en ny
+                    når den er tom
+                  </p>
                 </div>
-                <p>
-                  <span class="check-sign">&#x2714;</span> Bærbar oplader til
-                  din mobil
-                </p>
-                <p>
-                  <span class="check-sign">&#x2714;</span> Byt den til en ny når
-                  den er tom
-                </p>
-              </div>
-              <div class="information-box-right">
-                <div class="image-text-wrapper">
-                  <div class="image-container">
-                    <img src="pics/the_volt_charger.png" />
+                <div class="information-box-right">
+                  <div class="image-text-wrapper">
+                    <div class="image-container">
+                      <img src="pics/the_volt_charger.png" />
+                    </div>
+                    <div class="box-text">
+                      <p>Roskilde:<br /><span>Volt-oplader depositum*</span></p>
+                      <p class="price">200 DKK</p>
+                    </div>
                   </div>
-                  <div class="box-text">
-                    <p>Roskilde:<br /><span>Volt-oplader depositum*</span></p>
-                    <p class="price">200 DKK</p>
-                  </div>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Få dit depositum
+                    tilbage når som helst
+                  </p>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Behold og genbrug
+                    din Vold-oplader
+                  </p>
                 </div>
-                <p>
-                  <span class="check-sign">&#x2714;</span> Få dit depositum
-                  tilbage når som helst
-                </p>
-                <p>
-                  <span class="check-sign">&#x2714;</span> Behold og genbrug din
-                  Vold-oplader
-                </p>
               </div>
-            </div>
 
-            <div class="deltager-oversigt">
-              <button class="add-camp-deltager">
-                Tilføj camp deltager<span class="cross-sign">&#10010;</span>
-              </button>
+              <div class="deltager-oversigt">
+                <button class="add-camp-deltager">
+                  Tilføj camp deltager<span class="cross-sign">&#10010;</span>
+                </button>
 
-              <form class="deltager-form">
-                <fieldset class="form-fieldset">
-                  <div class="input-wrapper">
-                    <fieldset class="input-field">
-                      <legend><label for="deltagerName">Navn</label></legend>
+                <form class="deltager-form">
+                  <fieldset class="form-fieldset">
+                    <div class="input-wrapper">
+                      <fieldset class="input-field">
+                        <legend><label for="deltagerName">Navn</label></legend>
+                        <input
+                          id="deltagerName"
+                          class="deltager-input"
+                          type="text"
+                          placeholder="eks. Miklas"
+                          pattern="^[a-zA-Z-æøåÆØÅ ]+$"
+                          required
+                          autocomplete="off"
+                        />
+                      </fieldset>
+
+                      <fieldset class="input-field telefon-input">
+                        <legend><label for="deltagerTel">Mobil</label></legend>
+                        <input
+                          id="deltagerTel"
+                          class="deltager-input"
+                          type="tel"
+                          placeholder="eks. 21 23 23 23"
+                          pattern="[0-9]{8}"
+                          required
+                          autocomplete="off"
+                        />
+                      </fieldset>
+                    </div>
+
+                    <div class="checkbox-wrapper">
+                      <label class="checkbox-container"
+                        >Roskilde festival:<br /><b>Volt bytteservice</b
+                        ><br /><span class="price">179 DKK</span>
+                        <input
+                          id="bytte"
+                          class="bytteservice-checkbox"
+                          type="checkbox"
+                          checked
+                          value="Bytteservice"
+                        />
+                        <span class="checkbox-custom"></span>
+                      </label>
+
+                      <label class="checkbox-container"
+                        >Roskilde festival:<br /><b>Volt-oplader depositum</b
+                        ><br /><span class="price">200 DKK</span>
+                        <input
+                          id="depositum"
+                          class="bytteservice-checkbox"
+                          type="checkbox"
+                          value="Depositum"
+                        />
+                        <span class="checkbox-custom"></span>
+                      </label>
+                    </div>
+                    <div class="submit-button">
                       <input
-                        id="deltagerName"
-                        class="deltager-input"
-                        type="text"
-                        placeholder="eks. Miklas"
-                        pattern="^[a-zA-Z-æøåÆØÅ ]+$"
-                        required
-                        autocomplete="off"
+                        class="submit-deltager"
+                        type="submit"
+                        value="Tilføj deltager"
                       />
-                    </fieldset>
+                    </div>
+                  </fieldset>
+                </form>
 
-                    <fieldset class="input-field telefon-input">
-                      <legend><label for="deltagerTel">Mobil</label></legend>
-                      <input
-                        id="deltagerTel"
-                        class="deltager-input"
-                        type="tel"
-                        placeholder="eks. 21 23 23 23"
-                        pattern="[0-9]{8}"
-                        required
-                        autocomplete="off"
-                      />
-                    </fieldset>
+                <fieldset class="form-oversigt">
+                  <div class="person-field">
+                    <p></p>
+                    <p>Name:</p>
+                    <p>Mobil:</p>
+                    <p>Produkter:</p>
+                    <p>Pris:</p>
                   </div>
 
-                  <div class="checkbox-wrapper">
-                    <label class="checkbox-container"
-                      >Roskilde festival:<br /><b>Volt bytteservice</b
-                      ><br /><span class="price">179 DKK</span>
-                      <input
-                        id="bytte"
-                        class="bytteservice-checkbox"
-                        type="checkbox"
-                        checked
-                        value="Bytteservice"
-                      />
-                      <span class="checkbox-custom"></span>
-                    </label>
-
-                    <label class="checkbox-container"
-                      >Roskilde festival:<br /><b>Volt-oplader depositum</b
-                      ><br /><span class="price">200 DKK</span>
-                      <input
-                        id="depositum"
-                        class="bytteservice-checkbox"
-                        type="checkbox"
-                        value="Depositum"
-                      />
-                      <span class="checkbox-custom"></span>
-                    </label>
-                  </div>
-                  <div class="submit-button">
-                    <input
-                      class="submit-deltager"
-                      type="submit"
-                      value="Tilføj deltager"
-                    />
-                  </div>
+                  <div class="data-container"></div>
                 </fieldset>
-              </form>
 
-              <fieldset class="form-oversigt">
-                <div class="person-field">
-                  <P></P>
-                  <p>Name:</p>
-                  <p>Mobil:</p>
-                  <p>Produkter:</p>
-                  <p>Pris:</p>
-                </div>
-
-                <div class="data-container"></div>
-              </fieldset>
-
-              <div class="total-price-wrapper">
-                <div class="camp-discount">
-                  <p><i>Camp Rabat</i></p>
-                  <p data-rabat>0 DKK</p>
-                </div>
-                <div class="total-price">
-                  <p><i>I alt</i></p>
-                  <p data-ialt>0 DKK</p>
+                <div class="total-price-wrapper">
+                  <div class="camp-discount">
+                    <p><i>Camp Rabat</i></p>
+                    <p data-rabat>0 DKK</p>
+                  </div>
+                  <div class="total-price">
+                    <p><i>I alt</i></p>
+                    <p data-ialt>0 DKK</p>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="leveringsmuligheder">
-              <p>Leveringsmuligheder</p>
-              <button class="afhentning-button">
-                Afhentning på festivalen eller hos Volt<span>Gratis</span>
-              </button>
-              <button class="posthus-button">
-                Leveret til nærmeste posthus<span>50 DKK</span>
-              </button>
-            </div>
+              <div class="leveringsmuligheder">
+                <p>Leveringsmuligheder</p>
+                <button class="afhentning-button">
+                  Afhentning på festivalen eller hos Volt<span>Gratis</span>
+                </button>
+                <button class="posthus-button">
+                  Leveret til nærmeste posthus<span>50 DKK</span>
+                </button>
+              </div>
 
-            <div class="information-i-bunden">
-              <p>
-                *På festivalen får du en bærbar oplader inkl. kable til din
-                telefon. Når den bærbare oplader er tom, kan du bytte den til en
-                ny og skal ikke vente på opladningen.
-              </p>
-              <p>
-                *For at benytte Volts opladningsservice, skal du betale et
-                depositum for den bærbare Volt-oplader. Har du allerede En
-                volt-oplader fra tidligere, vælger du blot dette i formularen.
-              </p>
+              <div class="information-i-bunden">
+                <p>
+                  *På festivalen får du en bærbar oplader inkl. kable til din
+                  telefon. Når den bærbare oplader er tom, kan du bytte den til
+                  en ny og skal ikke vente på opladningen.
+                </p>
+                <p>
+                  *For at benytte Volts opladningsservice, skal du betale et
+                  depositum for den bærbare Volt-oplader. Har du allerede En
+                  volt-oplader fra tidligere, vælger du blot dette i formularen.
+                </p>
+              </div>
             </div>
           </section>
           <section class="step2 step-slide">
-            <button class="back">BACK</button>
-            <button class="next">NEXT</button>
+            <div class="stepContainer">
+              <button class="back">BACK</button>
+              <button class="next">NEXT</button>
 
-            <div class="upper-content">
-              <h1>Sign up for Volt</h1>
-              <button class="facebook-signin">
-                <span><img src="pics/facebook-logo.png"/></span
-                ><span class="button-text">Fortsæt med Facebook</span>
-              </button>
-              <p class="line-text"><span>Eller signup med email</span></p>
-            </div>
-
-           <form class="signup-form">
-
-            <div class="fornavn-efternavn">
-              <label>
-                <span>Fornavn</span>
-                <input type="text" placeholder="Fornavn" class="fornavn">
-              </label>
-              <label>
-                <span>Efternavn</span>
-                <input type="text" placeholder="Jensen" class="efternavn">
-              </label>
-            </div>
-          <div class="signup">
-            <label>
-              <span>Land</span>
-              <input type="text" placeholder="Land" class="land">
-            </label>
-            <label>
-                <span>Mobil</span>
-                <input type="tel" placeholder="+45 23 23 23 23" class="mobile">
-            </label>
-            <label>
-                <span>E-mail</span>
-                <input type="email" placeholder="E-mail" class="email">
-            </label>
-            <label>
-                <span>Adgangskode</span>
-                <input type="password" placeholder="Adgangskode" class="adgangskode">
-            </label>
-            <p>Bruges til login i Volt-appen</p>
-          </div>
-
-            <div class="adresse-information">
-              <label>
-                  <span>Adresse</span>
-                  <input type="text" placeholder="Adresse" class="adresse">
-              </label>
-              <label>
-                  <span>Adresse (linje 2)</span>
-                  <input type="text" placeholder="Adresse (linje 2)" class="adresse">
-              </label>
-              
-              <div class="postnummer-by">
-                  <label>
-                      <span>Postnummer</span>
-                      <input type="tel" placeholder="Postnummer" class="postnummer">
-                  </label>
-                  <label>
-                      <span>By</span>
-                      <input type="text" placeholder="By" class="by">
-                  </label>
+              <div class="upper-content">
+                <h1>Sign up for Volt</h1>
+                <button class="facebook-signin">
+                  <span><img src="pics/facebook-logo.png"/></span
+                  ><span class="button-text">Fortsæt med Facebook</span>
+                </button>
+                <p class="line-text"><span>Eller signup med email</span></p>
               </div>
-          </div>
-           </form>
 
+              <form class="signup-form">
+                <div class="fornavn-efternavn">
+                  <label>
+                    <span>Fornavn</span>
+                    <input type="text" placeholder="Fornavn" class="fornavn" />
+                  </label>
+                  <label>
+                    <span>Efternavn</span>
+                    <input type="text" placeholder="Jensen" class="efternavn" />
+                  </label>
+                </div>
+                <div class="signup">
+                  <label>
+                    <span>Land</span>
+                    <input type="text" placeholder="Land" class="land" />
+                  </label>
+                  <label>
+                    <span>Mobil</span>
+                    <input
+                      type="tel"
+                      placeholder="+45 23 23 23 23"
+                      class="mobile"
+                    />
+                  </label>
+                  <label>
+                    <span>E-mail</span>
+                    <input type="email" placeholder="E-mail" class="email" />
+                  </label>
+                  <label>
+                    <span>Adgangskode</span>
+                    <input
+                      type="password"
+                      placeholder="Adgangskode"
+                      class="adgangskode"
+                    />
+                  </label>
+                  <p>Bruges til login i Volt-appen</p>
+                </div>
+
+                <div class="adresse-information">
+                  <label>
+                    <span>Adresse</span>
+                    <input type="text" placeholder="Adresse" class="adresse" />
+                  </label>
+                  <label>
+                    <span>Adresse (linje 2)</span>
+                    <input
+                      type="text"
+                      placeholder="Adresse (linje 2)"
+                      class="adresse"
+                    />
+                  </label>
+
+                  <div class="postnummer-by">
+                    <label>
+                      <span>Postnummer</span>
+                      <input
+                        type="tel"
+                        placeholder="Postnummer"
+                        class="postnummer"
+                      />
+                    </label>
+                    <label>
+                      <span>By</span>
+                      <input type="text" placeholder="By" class="by" />
+                    </label>
+                  </div>
+                </div>
+              </form>
+            </div>
           </section>
 
           <section class="step3 step-slide">
-            <button class="back">BACK</button>
-            <button class="next">NEXT</button>
+            <div class="stepContainer">
+              <button class="back">BACK</button>
+              <button class="next">NEXT</button>
+              <div class="information-wrapper">
+                <div class="information-box-left">
+                  <div class="image-text-wrapper">
+                    <div class="image-container">
+                      <img
+                        class="image-circle"
+                        src="https://getvolt.dk/458/roskilde-festival-2019.jpg"
+                      />
+                    </div>
+                    <div class="box-text">
+                      <p>Roskilde:<br /><span>Volt bytteservice*</span></p>
+                      <p class="price">179 DKK</p>
+                    </div>
+                  </div>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Bærbar oplader til
+                    din mobil
+                  </p>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Byt den til en ny
+                    når den er tom
+                  </p>
+                </div>
+                <div class="information-box-right">
+                  <div class="image-text-wrapper">
+                    <div class="image-container">
+                      <img src="pics/the_volt_charger.png" />
+                    </div>
+                    <div class="box-text">
+                      <p>Roskilde:<br /><span>Volt-oplader depositum*</span></p>
+                      <p class="price">200 DKK</p>
+                    </div>
+                  </div>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Få dit depositum
+                    tilbage når som helst
+                  </p>
+                  <p>
+                    <span class="check-sign">&#x2714;</span> Behold og genbrug
+                    din Vold-oplader
+                  </p>
+                </div>
+              </div>
+              <div class="deltager-oversigt">
+                <fieldset class="form-oversigt showDiv">
+                  <div class="person-field">
+                    <p></p>
+                    <p>Name:</p>
+                    <p>Mobil:</p>
+                    <p>Produkter:</p>
+                    <p>Pris:</p>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
           </section>
           <section class="step4 step-slide">
-            <button class="back">BACK</button>
+            <div class="stepContainer">
+              <button class="back">BACK</button>
+              <button class="done">DONE</button>
+            </div>
           </section>
         </div>
       </div>
@@ -290,6 +367,22 @@
       let buttons = document.querySelectorAll(".next");
       let backButtons = document.querySelectorAll(".back");
       let stepCounter = 1;
+
+      function post(newItem) {
+        fetch("https://voltdb-5e8d.restdb.io/rest/volt", {
+          method: "post",
+          headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "x-apikey": "5ca3219edf5d634f46ecb178",
+            "cache-control": "no-cache"
+          },
+          body: JSON.stringify(newItem)
+        })
+          .then(e => e.json())
+          .then(data => {
+            console.log(data);
+          });
+      }
 
       for (let i = 0; i < buttons.length; i++) {
         let self = buttons[i];
@@ -328,7 +421,6 @@
           document.querySelector(".deltager-form").style.display = "block";
         });
 
-
       document
         .querySelector(".submit-deltager")
         .addEventListener("click", e => {
@@ -336,25 +428,24 @@
           console.log(form.elements.deltagerTel.checkValidity());
           console.log(form.elements.deltagerName.checkValidity());
 
-          document.querySelector("fieldset.input-field").style.border = "2px solid #a6cc45";
-          document.querySelector(".telefon-input").style.border = "2px solid #a6cc45";
-            
-          if (form.elements.deltagerName.checkValidity() === false)
-            {
-              document.querySelector("fieldset.input-field").style.border = "2px solid red";
-            }
-          if (form.elements.deltagerTel.checkValidity() === false)
-            {
-              document.querySelector(".telefon-input").style.border = "2px solid red";
-            }
+          document.querySelector("fieldset.input-field").style.border =
+            "2px solid #a6cc45";
+          document.querySelector(".telefon-input").style.border =
+            "2px solid #a6cc45";
+
+          if (form.elements.deltagerName.checkValidity() === false) {
+            document.querySelector("fieldset.input-field").style.border =
+              "2px solid red";
+          }
+          if (form.elements.deltagerTel.checkValidity() === false) {
+            document.querySelector(".telefon-input").style.border =
+              "2px solid red";
+          }
 
           if (
             form.elements.deltagerName.checkValidity() === true &&
             form.elements.deltagerTel.checkValidity() === true
           ) {
-
-          
-
             document.querySelector(".form-oversigt").style.display = "block";
 
             const Deltager = {
@@ -432,7 +523,15 @@
             campDeltager.deltagerNumber;
         });
         document.querySelector(".data-container").appendChild(clone);
+        document.querySelector(".step3 .form-oversigt").innerHTML = "";
+        let cln = document.querySelector(".data-container").cloneNode(true);
+
+        document.querySelector(".step3 .form-oversigt").appendChild(cln);
       }
+
+      document.querySelector(".done").addEventListener("click", () => {
+        post([campArray]);
+      });
 
       // step 2
     </script>

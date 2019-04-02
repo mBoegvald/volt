@@ -1,6 +1,6 @@
 
 .upper-content {
-    width: 700px;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
 }
@@ -29,23 +29,17 @@
 }
 
 .line-text {
-    width: 500px;
-    text-align: center;
-    border-bottom: 1px solid #000;
-    line-height: 0.1em;
-    margin: 10px auto 20px;
+    width: 60%;
+    border-top: 1px solid rgb(163, 163, 163);
+    margin: 0 auto;
+    color: rgb(92, 92, 92);
 }
 
-.line-text span {
-    background: #fff;
-    padding: 0 10px;
-}
 /* FORNAVN OG EFTERNAVN INPUT */
 .fornavn-efternavn {
-    width: 500px;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
+    justify-content: center;
 }
 
 .fornavn-efternavn input {
@@ -56,14 +50,19 @@
     padding-inline-start: 15px;
     font-size: 20px;
 }
+
+.fornavn-efternavn > label:nth-child(2) {
+    margin-left: 20px;
+}
+
 /* FORNAVN OG EFTERNAVN INPUT */
 /* GENERALT */
 .signup {
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin: 0 auto;
+    align-items: center;
 }
 
 .signup input {
@@ -82,10 +81,10 @@
 
 .signup-form label span {
     position: absolute;
-    top: -7px;
+    top: -9px;
     left: 17px;
     background-color: white;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .signup p {
@@ -97,7 +96,7 @@
 
 .signup-form input::placeholder {
     color: #ccc;
-    font-size: 15px;
+    font-size: 12px;
     font-style: italic;
 }
 
@@ -108,11 +107,12 @@
 /* GENERALT */
 /* ADRESSE  */
 .adresse-information {
-    width: 500px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto;
+    align-items: center;
+   
 }
 
 .adresse-information input {
@@ -142,9 +142,8 @@
 }
 
 .adresse-information .postnummer-by label span {
-    top: -17px;
-    left: 17px;
-   
+    top: -19px;
+    left: 17px; 
 }
 
 .adresse-information .postnummer-by label:nth-child(2) span {
@@ -152,3 +151,13 @@
     top: -20px;
 }
 /* ADRESSE  */
+
+.anden-adresse-container {
+   width: 83%;
+   text-align: center;
+   margin-top: 10px;
+}
+
+.anden-adresse-container label {
+    padding-left: 10px;
+}

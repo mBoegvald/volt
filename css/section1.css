@@ -1,7 +1,8 @@
 .information-wrapper {
   display: flex;
-  width: 900px;
+  width: 100%;
   margin: 100px auto 50px;
+  justify-content: center;
 }
 
 .image-container {
@@ -51,14 +52,14 @@
 }
 
 .deltager-oversigt {
-  width: 900px;
+  width: 100%;
   margin: 0 auto;
 }
 
 .form-fieldset {
   border-radius: 8px;
   border: 2px solid #a6cc45;
-  width: 800px;
+  width: 100%;
   height: 400px;
   margin-top: 50px;
 }
@@ -114,9 +115,8 @@ fieldset.input-field:nth-child(2) {
 
 .checkbox-wrapper {
   display: flex;
-  width: 640px;
-  justify-content: space-between;
-  padding-left: 60px;
+  width: 100%;
+  justify-content: space-around;
 }
 
 .checkbox-container {
@@ -218,7 +218,7 @@ fieldset.input-field:nth-child(2) {
 .form-oversigt {
   border-radius: 8px;
   border: 2px solid #a6cc45;
-  width: 800px;
+  width: 100%;
   height: 100%;
   margin-top: 50px;
   display: none;
@@ -231,16 +231,16 @@ fieldset.input-field:nth-child(2) {
 .person-information {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  width: 600px;
+  width: 80%;
   margin: 20px 50px 25px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-bottom: 2px solid #a6cc45;
 }
 
 .person-field {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  width: 600px;
+  width: 80%;
   margin: 50px 50px 0;
   color: rgb(131, 131, 131);
 }
@@ -320,4 +320,8 @@ div.person-field > p:nth-child(5) {
   font-size: 12px;
   color: rgb(163, 163, 163);
   flex-basis: 300px;
+}
+
+.showDiv {
+  display: block;
 }

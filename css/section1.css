@@ -73,17 +73,59 @@
 .deltager-oversigt .add-camp-deltager {
   border-radius: 8px;
   background-color: #a6cc45;
-  padding: 10px 20px;
+  padding: 15px 30px;
   border: 0;
   color: white;
   margin: 15px 0 0;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1em;
   cursor: pointer;
 }
 
 .deltager-oversigt .add-camp-deltager .cross-sign {
   padding-left: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 59%;
+  margin: 0 auto;
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+.next {
+  border-radius: 8px;
+  background-color: #a6cc45;
+  padding: 15px 30px;
+  border: 0;
+  color: white;
+  margin: 15px 0 0;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.next span {
+  padding-left: 20px;
+}
+
+.back {
+  border-radius: 8px;
+  background-color: light-grey;
+  padding: 10px 20px;
+  border: 0;
+  color: black;
+  margin: 15px 0 0;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+}
+.back span {
+  padding-right: 20px;
 }
 
 fieldset.input-field {
@@ -92,7 +134,7 @@ fieldset.input-field {
   border-radius: 8px;
   border: solid 2px #ccc;
   padding-inline-start: 15px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 input[type="text"],
@@ -284,7 +326,7 @@ div.person-field > p:nth-child(5) {
   border: 2px solid #ccc;
   background-color: transparent;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 20px;
   width: 650px;
   padding: 20px;
   display: flex;

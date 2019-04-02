@@ -35,56 +35,73 @@
     color: rgb(92, 92, 92);
 }
 
-/* FORNAVN OG EFTERNAVN INPUT */
-.fornavn-efternavn {
-    width: 100%;
+.signup-input-wrapper {
+    width: 59%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.fornavn-efternavn input {
-    width: 220px;
+.signup-input-wrapper input[type="text"] {
+    width: 90%;
     height: 35px;
     border-radius: 8px;
     border: solid 2px #ccc;
     padding-inline-start: 15px;
-    font-size: 20px;
+    font-size: 15px;
+  
 }
 
-.fornavn-efternavn > label:nth-child(2) {
-    margin-left: 20px;
+.signup-input-wrapper label span {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: white;
+    font-size: 15px;
 }
 
-/* FORNAVN OG EFTERNAVN INPUT */
-/* GENERALT */
-.signup {
+.signup  {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    align-items: center;
+    text-align: center;
+
 }
 
-.signup input {
-    width: 481px;
+.signup label input {
+    width: 57%;
     height: 35px;
     border-radius: 8px;
     border: solid 2px #ccc;
     padding-inline-start: 15px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .signup-form label{
-    position: relative;
     margin-top: 25px;
+    width: 100%;
+    position: relative;
 }
 
-.signup-form label span {
+.signup label span {
     position: absolute;
-    top: -9px;
-    left: 17px;
+    top: -25%;
+    left: 22%;
     background-color: white;
-    font-size: 15px;
+    font-size: 15px; 
+    z-index: 3;
+}
+
+
+.signup-form input::placeholder {
+    color: #ccc;
+    font-size: 12px;
+    font-style: italic;
+   
+}
+
+.signup-form input:focus {
+    outline: 0;
 }
 
 .signup p {
@@ -94,70 +111,7 @@
     margin-top: 5px;
 }
 
-.signup-form input::placeholder {
-    color: #ccc;
-    font-size: 12px;
-    font-style: italic;
-}
-
-.signup-form input:focus {
-    outline: 0;
-}
-
-/* GENERALT */
-/* ADRESSE  */
-.adresse-information {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-   
-}
-
-.adresse-information input {
-    width: 481px;
-    height: 35px;
-    border-radius: 8px;
-    border: solid 2px #ccc;
-    padding-inline-start: 15px;
-    font-size: 20px;
-}
-
-.adresse-information label:first-child{
-    margin-top: 60px;
-}
-
-.postnummer-by {
-    margin-top: 25px;
-}
-
-.adresse-information .postnummer-by label:nth-child(1) input{
-    width: 150px;
-}
-
-.adresse-information .postnummer-by label:nth-child(2) input{
-    width: 277px;
-    margin-left: 30px;
-}
-
-.adresse-information .postnummer-by label span {
-    top: -19px;
-    left: 17px; 
-}
-
-.adresse-information .postnummer-by label:nth-child(2) span {
-    left: 47px;
-    top: -20px;
-}
-/* ADRESSE  */
-
-.anden-adresse-container {
-   width: 83%;
-   text-align: center;
-   margin-top: 10px;
-}
-
-.anden-adresse-container label {
-    padding-left: 10px;
+.anden-betalingsadresse {
+    width: 59%;
+    margin: 10px auto;
 }

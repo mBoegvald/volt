@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/section1.css" />
     <link rel="stylesheet" href="css/section2.css" />
+    <link rel="stylesheet" href="css/section3.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Order</title>
     <style></style>
@@ -201,24 +202,44 @@
               </div>
 
               <form class="signup-form">
-                <div class="fornavn-efternavn">
+                <div class="signup-input-wrapper">
                   <label>
                     <span>Fornavn</span>
-                    <input type="text" placeholder="Fornavn" class="fornavn" />
+                    <input
+                      type="text"
+                      placeholder="Fornavn"
+                      id="fornavn"
+                      pattern="^[a-zA-Z-æøåÆØÅ ]+$"
+                      required
+                      autocomplete="off"
+                      onfocusout="isValid(this)"
+                    />
                   </label>
                   <label>
                     <span>Efternavn</span>
                     <input
                       type="text"
                       placeholder="Efternavn"
-                      class="efternavn"
+                      id="efternavn"
+                      pattern="^[a-zA-Z-æøåÆØÅ ]+$"
+                      required
+                      autocomplete="off"
+                      onfocusout="isValid(this)"
                     />
                   </label>
                 </div>
                 <div class="signup">
                   <label>
                     <span>Land</span>
-                    <input type="text" placeholder="Land" class="land" />
+                    <input
+                      type="text"
+                      placeholder="Land"
+                      class="land"
+                      pattern="^[a-zA-Z-æøåÆØÅ ]+$"
+                      required
+                      autocomplete="off"
+                      onfocusout="isValid(this)"
+                    />
                   </label>
                   <label>
                     <span>Mobil</span>
@@ -226,11 +247,20 @@
                       type="tel"
                       placeholder="+45 23 23 23 23"
                       class="mobile"
+                      pattern="[0-9]{8}"
+                      required
+                      autocomplete="off"
+                      onfocusout="isValid(this)"
                     />
                   </label>
                   <label>
                     <span>E-mail</span>
-                    <input type="email" placeholder="E-mail" class="email" />
+                    <input
+                      type="email"
+                      placeholder="E-mail"
+                      class="email"
+                      onfocusout="isValid(this)"
+                    />
                   </label>
                   <label>
                     <span>Adgangskode</span>
@@ -238,16 +268,23 @@
                       type="password"
                       placeholder="Adgangskode"
                       class="adgangskode"
+                      onfocusout="isValid(this)"
                     />
                   </label>
                   <p>
                     <img src="pics/padlock.png" /> Bruges til login i Volt-appen
                   </p>
-                </div>
-                <div class="adresse-information">
+
                   <label>
                     <span>Adresse</span>
-                    <input type="text" placeholder="Adresse" class="adresse" />
+                    <input
+                      type="text"
+                      placeholder="Adresse"
+                      class="adresse"
+                      autocomplete="off"
+                      required
+                      onfocusout="isValid(this)"
+                    />
                   </label>
                   <label>
                     <span>Adresse (linje 2)</span>
@@ -255,24 +292,42 @@
                       type="text"
                       placeholder="Adresse (linje 2)"
                       class="adresse"
+                      autocomplete="off"
+                      required
+                      onfocusout="isValid(this)"
                     />
                   </label>
-                  <div class="postnummer-by">
-                    <label>
-                      <span>Postnummer</span>
-                      <input
-                        type="text"
-                        placeholder="Postnummer"
-                        class="postnummer"
-                      />
-                    </label>
-                    <label>
-                      <span>By</span>
-                      <input type="text" placeholder="By" class="by" />
-                    </label>
-                  </div>
+                </div>
+                <div class="signup-input-wrapper">
+                  <label>
+                    <span>Postnummer</span>
+                    <input
+                      type="text"
+                      placeholder="Postnummer"
+                      class="postnummer"
+                      pattern="[0-9]{4}"
+                      required
+                      autocomplete="off"
+                      onfocusout="isValid(this)"
+                    />
+                  </label>
+                  <label>
+                    <span>By</span>
+                    <input
+                      type="text"
+                      placeholder="By"
+                      class="by"
+                      onfocusout="isValid(this)"
+                    />
+                  </label>
                 </div>
               </form>
+              <div class="anden-betalingsadresse">
+                <label>
+                  <input type="checkbox" /> Benyt en anden adresse som
+                  betalingsadresse.
+                </label>
+              </div>
               <div class="buttonContainer">
                 <button class="back"><span>&#x21fd;</span>Tilbage</button>
                 <button class="next">Fortsæt<span>&#x21FE;</span></button>
@@ -293,6 +348,36 @@
                   </div>
                 </fieldset>
               </div>
+              <div class="betalingsmetode">
+                <div class="text-image-wrapper">
+                  <div class="img-container">
+                    <img
+                      src="https://getvolt.dk/themes/volt/img//payment-icon-cc.png"
+                    />
+                  </div>
+                  <p>Kreditkort</p>
+                </div>
+                <div class="text-image-wrapper">
+                  <div class="img-container">
+                    <img
+                      src="https://getvolt.dk/themes/volt/img//payment-icon-mp.png"
+                    />
+                  </div>
+                  <p>Mobilepay</p>
+                </div>
+                <div class="text-image-wrapper">
+                  <div class="img-container">
+                    <img
+                      src="https://getvolt.dk/themes/volt/img//payment-icon-pp.png"
+                    />
+                  </div>
+                  <p>PayPal</p>
+                </div>
+              </div>
+              <label>
+                <input type="checkbox" /> Jeg accepterer Volts vilkår og
+                privatpolitik.
+              </label>
               <div class="buttonContainer fullwidth">
                 <button class="back"><span>&#x21fd;</span>Tilbage</button>
                 <button class="next">Fortsæt<span>&#x21FE;</span></button>
@@ -496,9 +581,24 @@
         document.querySelector(".step3 .form-oversigt").appendChild(cln);
       }
 
-      document.querySelector(".done").addEventListener("click", () => {
+      /*   document.querySelector(".done").addEventListener("click", () => {
         post([campArray]);
-      });
+      }); */
+
+      function isValid(e) {
+        console.log("IsValid");
+
+        let selectedInputField = e;
+        selectedInputField == fornavn;
+        console.log(selectedInputField == fornavn);
+        let checkValidate = selectedInputField.checkValidity();
+
+        if (checkValidate == true) {
+          selectedInputField.style.borderColor = "#a6cc45";
+        } else {
+          selectedInputField.style.borderColor = "#ff4f33";
+        }
+      }
 
       // step 2
     </script>

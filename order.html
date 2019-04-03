@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/section1.css" />
     <link rel="stylesheet" href="css/section2.css" />
     <link rel="stylesheet" href="css/section3.css" />
+    <link rel="stylesheet" href="css/section4.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>Order</title>
     <style></style>
@@ -148,20 +149,19 @@
                     <p>Produkter:</p>
                     <p>Pris:</p>
                   </div>
-
                   <div class="data-container"></div>
-                </fieldset>
 
-                <div class="total-price-wrapper">
-                  <div class="camp-discount">
-                    <p><i>Camp Rabat</i></p>
-                    <p data-rabat>0 DKK</p>
+                  <div class="total-price-wrapper">
+                    <div class="camp-discount">
+                      <p><i>Camp Rabat</i></p>
+                      <p data-rabat>0 DKK</p>
+                    </div>
+                    <div class="total-price">
+                      <p><i>I alt</i></p>
+                      <p data-ialt>0 DKK</p>
+                    </div>
                   </div>
-                  <div class="total-price">
-                    <p><i>I alt</i></p>
-                    <p data-ialt>0 DKK</p>
-                  </div>
-                </div>
+                </fieldset>
               </div>
 
               <div class="leveringsmuligheder">
@@ -350,7 +350,7 @@
               </div>
               <div class="betalingsmetode">
                 <div class="text-image-wrapper">
-                  <div class="img-container">
+                  <div class="img-container" tabindex="0">
                     <img
                       src="https://getvolt.dk/themes/volt/img//payment-icon-cc.png"
                     />
@@ -358,7 +358,7 @@
                   <p>Kreditkort</p>
                 </div>
                 <div class="text-image-wrapper">
-                  <div class="img-container">
+                  <div class="img-container" tabindex="0">
                     <img
                       src="https://getvolt.dk/themes/volt/img//payment-icon-mp.png"
                     />
@@ -366,7 +366,7 @@
                   <p>Mobilepay</p>
                 </div>
                 <div class="text-image-wrapper">
-                  <div class="img-container">
+                  <div class="img-container" tabindex="0">
                     <img
                       src="https://getvolt.dk/themes/volt/img//payment-icon-pp.png"
                     />
@@ -386,6 +386,66 @@
           </section>
           <section class="step4 step-slide">
             <div class="stepContainer">
+              <h1>
+                Indtast dine kortinformationer<br />for at gennemføre købet
+              </h1>
+              <form class="betalings-form">
+                <label>
+                  <span>Kortnummer</span>
+                  <input
+                    type="tel"
+                    placeholder="Kortnummer"
+                    class="kortnummer"
+                    required
+                    autocomplete="off"
+                    pattern="[0-9]{16}"
+                    onfocusout="isValid(this)"
+                  />
+                </label>
+                <div class="expiredate-wrapper">
+                  <label>
+                    <span>Udløbsdato</span>
+                    <input
+                      type="tel"
+                      placeholder="Udløbsdato"
+                      id="Udløbsdato"
+                      required
+                      autocomplete="off"
+                      pattern="[0-9+/]{5}"
+                      onfocusout="isValid(this)"
+                    />
+                  </label>
+                  <label>
+                    <input
+                      type="tel"
+                      placeholder="2019"
+                      id="årstal"
+                      required
+                      autocomplete="off"
+                      pattern="[0-9]{4}"
+                      onfocusout="isValid(this)"
+                    />
+                  </label>
+                  <label>
+                    <span>Kontrolcifre</span>
+                    <input
+                      type="tel"
+                      placeholder="Kontrolcifre"
+                      id="kontrolcifre"
+                      required
+                      autocomplete="off"
+                      pattern="[0-9]{3}"
+                      onfocusout="isValid(this)"
+                    />
+                  </label>
+                </div>
+                <div class="img-container">
+                  <img
+                    src="https://getvolt.dk/themes/volt/img//payment-icon-cc.png"
+                  />
+                </div>
+                <p><b>Total til betaling: </b><span data-ialtslut></span></p>
+              </form>
               <div class="buttonContainer">
                 <button class="back"><span>&#x21fd;</span>Tilbage</button>
                 <button class="next">Fortsæt<span>&#x21FE;</span></button>
@@ -554,6 +614,8 @@
             document.querySelector("[data-ialt]").textContent =
               fullPrice - discountPrice;
             document.querySelector("[data-rabat").textContent = discountPrice;
+            document.querySelector("[data-ialtslut").textContent =
+              fullPrice - discountPrice + " DKK";
           }
         });
 

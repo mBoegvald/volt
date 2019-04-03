@@ -1,0 +1,91 @@
+.step4 h1 {
+  width: 59%;
+  text-align: left;
+  margin: 70px auto 35px;
+}
+
+.betalings-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.betalings-form label input {
+  width: 57%;
+  height: 35px;
+  border-radius: 8px;
+  border: solid 2px #ccc;
+  padding-inline-start: 15px;
+  font-size: 15px;
+}
+
+.betalings-form label {
+  margin-top: 25px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.betalings-form label span {
+  position: absolute;
+  top: -25%;
+  left: 22%;
+  background-color: white;
+  font-size: 15px;
+  z-index: 3;
+}
+
+.betalings-form input::placeholder {
+  color: #ccc;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.betalings-form-form input:focus {
+  outline: 0;
+}
+
+.expiredate-wrapper {
+  display: grid;
+  grid-template-columns: 40% 40%;
+
+  width: 59%;
+  margin: 0 auto;
+}
+
+.expiredate-wrapper label {
+  text-align: left;
+}
+
+.expiredate-wrapper input[type="tel"] {
+  width: 70%;
+  height: 35px;
+  border-radius: 8px;
+  border: solid 2px #ccc;
+  padding-inline-start: 15px;
+  font-size: 15px;
+}
+
+.expiredate-wrapper label span {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background-color: white;
+  font-size: 15px;
+}
+
+.betalings-form .img-container {
+  width: 59%;
+  height: 10%;
+  margin: 25px auto;
+}
+
+.betalings-form .img-container img {
+  width: 15%;
+  height: 100%;
+}
+
+.betalings-form p {
+  width: 59%;
+  margin: 0 auto;
+}

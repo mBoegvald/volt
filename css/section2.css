@@ -1,117 +1,113 @@
-
 .upper-content {
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .upper-content h1 {
-    margin-top: 50px;
-    font-size: 2em;
+  margin-top: 50px;
+  font-size: 2em;
 }
 
 .facebook-signin {
-    background-color: #3C5A99;
-    border: 0;
-    border-radius: 8px;
-    width: 500px;
-    margin: 25px auto;
-    padding: 5px 10px;
-    display: flex;
-    align-items: center;
-    color: #fff;
+  background-color: #3c5a99;
+  border: 0;
+  border-radius: 8px;
+  width: 500px;
+  margin: 25px auto;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  color: #fff;
 }
 
 .facebook-signin .button-text {
-    margin: 0 auto;
-    font-size: 13px;
-    font-weight: bold;
+  margin: 0 auto;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .line-text {
-    width: 60%;
-    border-top: 1px solid rgb(163, 163, 163);
-    margin: 0 auto;
-    color: rgb(92, 92, 92);
+  width: 60%;
+  border-top: 1px solid rgb(163, 163, 163);
+  margin: 0 auto;
+  color: rgb(92, 92, 92);
 }
 
 .signup-input-wrapper {
-    width: 59%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
+  width: 59%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .signup-input-wrapper input[type="text"] {
-    width: 90%;
-    height: 35px;
-    border-radius: 8px;
-    border: solid 2px #ccc;
-    padding-inline-start: 15px;
-    font-size: 15px;
-  
+  width: 90%;
+  height: 35px;
+  border-radius: 8px;
+  border: solid 2px #ccc;
+  padding-inline-start: 15px;
+  font-size: 15px;
 }
 
 .signup-input-wrapper label span {
-    position: absolute;
-    top: -10px;
-    left: 15px;
-    background-color: white;
-    font-size: 15px;
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background-color: white;
+  font-size: 15px;
+  z-index: 1;
 }
 
-.signup  {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
+.signup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .signup label input {
-    width: 57%;
-    height: 35px;
-    border-radius: 8px;
-    border: solid 2px #ccc;
-    padding-inline-start: 15px;
-    font-size: 15px;
+  width: 57%;
+  height: 35px;
+  border-radius: 8px;
+  border: solid 2px #ccc;
+  padding-inline-start: 15px;
+  font-size: 15px;
 }
 
-.signup-form label{
-    margin-top: 25px;
-    width: 100%;
-    position: relative;
+.signup-form label {
+  margin-top: 25px;
+  width: 100%;
+  position: relative;
 }
 
 .signup label span {
-    position: absolute;
-    top: -25%;
-    left: 22%;
-    background-color: white;
-    font-size: 15px; 
-    z-index: 3;
+  position: absolute;
+  top: -25%;
+  left: 22%;
+  background-color: white;
+  font-size: 15px;
+  z-index: 3;
 }
 
-
 .signup-form input::placeholder {
-    color: #ccc;
-    font-size: 12px;
-    font-style: italic;
-   
+  color: #ccc;
+  font-size: 12px;
+  font-style: italic;
 }
 
 .signup-form input:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .signup p {
-    text-align: center;
-    font-size: 12px;
-    color: #ccc;
-    margin-top: 5px;
+  text-align: center;
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 5px;
 }
 
 .anden-betalingsadresse {
-    width: 59%;
-    margin: 10px auto;
+  width: 59%;
+  margin: 10px auto;
 }

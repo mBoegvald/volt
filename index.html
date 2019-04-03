@@ -67,6 +67,8 @@
       }
       .buttonContainer {
         margin: 20px;
+        display: flex;
+        justify-content: center;
       }
 
       .content button {
@@ -88,6 +90,16 @@
       }
       .content p {
         font-size: 1.2em;
+      }
+
+      .buttonContainer p {
+        padding-top: 10px;
+        max-width: 90%;
+        margin: 0 auto;
+        font-size: 0.8em;
+      }
+      .red {
+        color: red;
       }
     </style>
   </head>
@@ -121,8 +133,15 @@
           mobilen i lommen.
         </p>
         <div class="buttonContainer">
-          <a><button>Book enkel</button></a>
-          <a href="order.html"><button>Book til camp</button></a>
+          <div>
+            <a><button>Book enkel</button></a>
+            <p>Kun 179 DDK + depoitum</p>
+            <p class="red">Udløber om 2 dage</p>
+          </div>
+          <div>
+            <a href="order.html"><button>Book til camp</button></a>
+            <p>Få rabat til alle i én booking!</p>
+          </div>
         </div>
       </div>
     </div>
